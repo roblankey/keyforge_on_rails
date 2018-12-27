@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "houses#index", type: :request do
-  let(:params) { {} }
+  let(:params) { {sort: "-created_at"} }
 
   subject(:make_request) do
     jsonapi_get "/api/v1/houses",
@@ -14,9 +14,9 @@ RSpec.describe "houses#index", type: :request do
 
     it 'serializes the list correctly' do
       make_request
-      expect(json_ids(true)).to match_array([house1.id, house2.id])
-      assert_payload(:house, house1, json_items[0])
-      assert_payload(:house, house2, json_items[1])
+      expect(json_ids(false)).to match_array([house1.id, house2.id])
+      assert_payload(:house, house1, json_items[1])
+      assert_payload(:house, house2, json_items[0])
     end
   end
 end

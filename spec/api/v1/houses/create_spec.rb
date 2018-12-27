@@ -11,7 +11,8 @@ RSpec.describe "houses#create", type: :request do
         data: {
           type: 'houses',
           attributes: {
-            # ... your attrs here
+            name: "Some cool house",
+            image_path: "the location where the image is at"
           }
         }
       }
