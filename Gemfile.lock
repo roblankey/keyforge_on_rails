@@ -52,6 +52,10 @@ GEM
     crass (1.0.4)
     database_cleaner (1.7.0)
     diff-lcs (1.3)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     erubi (1.8.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -156,6 +160,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   database_cleaner
+  dotenv-rails
   factory_bot_rails (~> 4.0)
   faker
   pg (>= 0.18, < 2.0)

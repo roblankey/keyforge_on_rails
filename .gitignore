@@ -258,3 +258,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/ruby,rails,macos,windows,rubymine,visualstudiocode
+
+# rails dotenv
+.env.*.local

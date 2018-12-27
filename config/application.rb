@@ -17,6 +17,10 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# load environment
+Dotenv::Railtie.load
+HOSTNAME = ENV['HOSTNAME']
+
 module KeyforgeOnRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
