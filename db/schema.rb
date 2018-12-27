@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(version: 2018_12_27_052446) do
     t.string "image_url"
     t.uuid "house_one_id"
     t.uuid "house_two_id"
+    t.uuid "house_three_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["house_one_id"], name: "index_archons_on_house_one_id"
+    t.index ["house_three_id"], name: "index_archons_on_house_three_id"
     t.index ["house_two_id"], name: "index_archons_on_house_two_id"
   end
 
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_12_27_052446) do
     t.index ["name"], name: "index_houses_on_name"
   end
 
-  add_foreign_key "archons", "houses", column: "house_one_id"
-  add_foreign_key "archons", "houses", column: "house_two_id"
+  add_foreign_key "archons", "houses", column: "house_one_id", on_delete: :restrict
+  add_foreign_key "archons", "houses", column: "house_three_id", on_delete: :restrict
+  add_foreign_key "archons", "houses", column: "house_two_id", on_delete: :restrict
 end
