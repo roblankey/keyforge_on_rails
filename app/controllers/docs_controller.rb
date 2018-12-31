@@ -19,4 +19,5 @@ class DocsController < ActionController::API
     key :produces, ['application/json']
   end
   jsonapi_resource '/v1/houses'
+  jsonapi_resource '/v1/archons'
 end

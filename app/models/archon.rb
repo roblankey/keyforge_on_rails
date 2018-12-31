@@ -1,8 +1,8 @@
 class Archon < ApplicationRecord
   validates :name, :set, presence: true
   validates :name, uniqueness: true
-  
-  has_one :house, as: :house_one, foreign_key: :house_one_id 
-  has_one :house, as: :house_two, foreign_key: :house_two_id
-  has_one :house, as: :house_three, foreign_key: :house_three_id
+
+  belongs_to :house_one, class_name: 'House'
+  belongs_to :house_two, class_name: 'House'
+  belongs_to :house_three, class_name: 'House'
 end

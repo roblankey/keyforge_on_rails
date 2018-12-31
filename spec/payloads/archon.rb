@@ -27,7 +27,8 @@
 # end
 #
 # For more information, see https://jsonapi-suite.github.io/jsonapi_spec_helpers/
-JsonapiSpecHelpers::Payload.register(:house) do
+JsonapiSpecHelpers::Payload.register(:archon) do
   key(:name, String)
+  key(:set, String)
   key(:image_url, String)
 end
