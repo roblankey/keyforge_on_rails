@@ -31,6 +31,11 @@
 #
 # For additional documentation, see https://jsonapi-suite.github.io/strong_resources
 StrongResources.configure do
+  strong_resource :archon do
+    attribute :name, :string
+    attribute :set, :string
+    attribute :image_url, :string
+  end
   strong_resource :house do
     attribute :name, :string
     attribute :image_path, :string

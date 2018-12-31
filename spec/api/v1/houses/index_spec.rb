@@ -1,11 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "houses#index", type: :request do
-  let(:params) { {sort: "-created_at"} }
+RSpec.describe 'houses#index', type: :request do
+  let(:params) { { sort: '-created_at' } }
 
   subject(:make_request) do
-    jsonapi_get "/api/v1/houses",
-      params: params
+    jsonapi_get '/api/v1/houses', params: params
   end
 
   describe 'basic fetch' do
