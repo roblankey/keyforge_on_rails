@@ -14,7 +14,7 @@ RSpec.describe "archons#index", type: :request do
 
     it 'serializes the list correctly' do
       make_request
-      expect(json_ids(true)).to match_array([archon1.id, archon2.id])
+      expect(json_ids(false)).to match_array([archon1.id, archon2.id])
       assert_payload(:archon, archon1, json_items[1])
       assert_payload(:archon, archon2, json_items[0])
     end

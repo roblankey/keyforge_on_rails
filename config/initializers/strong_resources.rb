@@ -35,6 +35,9 @@ StrongResources.configure do
     attribute :name, :string
     attribute :set, :string
     attribute :image_url, :string
+    belongs_to :house_one, resource: :house
+    belongs_to :house_two, resource: :house
+    belongs_to :house_three, resource: :house
   end
   strong_resource :house do
     attribute :name, :string

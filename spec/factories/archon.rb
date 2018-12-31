@@ -1,7 +1,7 @@
 # This will guess the Archon class
 FactoryBot.define do
   factory :archon do
-    name { Faker::HarryPotter.character }
+    name { Faker::FunnyName.name_with_initial }
     self.set { Faker::HarryPotter.book }
     image_url { Faker::File.file_name }
 

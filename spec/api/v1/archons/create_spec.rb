@@ -1,15 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe 'archons#create', type: :request do
+  before(:all) do
+    @houses = create_list(:house, 3)
+  end
+
+  after(:all) do
+    House.delete([@houses[0].id, @houses[1].id, @houses[2].id])
+  end
+
   subject(:make_request) do
     jsonapi_post '/api/v1/archons', payload
   end
 
   describe 'basic create' do
     let!(:attrs) { attributes_for(:archon) }
-    let!(:house1) { create(:house) }
-    let!(:house2) { create(:house) }
-    let!(:house3) { create(:house) }
 
     let(:payload) do
       {
@@ -18,9 +23,27 @@ RSpec.describe 'archons#create', type: :request do
           attributes: {
             name: attrs[:name],
             set: attrs[:set],
-            house_one_id: house1.id,
-            house_two_id: house2.id,
-            house_three_id: house3.id
+            image_url: attrs[:image_url]
+          },
+          relationships: {
+            house_one: {
+              data: {
+                id: @houses[0].id.to_s,
+                type: 'houses'
+              }
+            },
+            house_two: {
+              data: {
+                id: @houses[1].id.to_s,
+                type: 'houses'
+              }
+            },
+            house_three: {
+              data: {
+                id: @houses[2].id.to_s,
+                type: 'houses'
+              }
+            }
           }
         }
       }
