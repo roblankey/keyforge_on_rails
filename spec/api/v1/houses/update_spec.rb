@@ -15,7 +15,7 @@ RSpec.describe 'houses#update', type: :request do
           id: house.id.to_s,
           type: 'houses',
           attributes: {
-            image_path: new[:image_path]
+            image_url: new[:image_url]
           }
         }
       }
@@ -28,7 +28,7 @@ RSpec.describe 'houses#update', type: :request do
       assert_payload(:house, house, json_item)
 
       expect(house.name).not_to eq(new[:name])
-      expect(house.image_path).to eq(new[:image_path])
+      expect(house.image_url).to eq(new[:image_url])
     end
   end
 end

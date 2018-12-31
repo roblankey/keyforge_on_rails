@@ -29,5 +29,5 @@
 # For more information, see https://jsonapi-suite.github.io/jsonapi_spec_helpers/
 JsonapiSpecHelpers::Payload.register(:house) do
   key(:name, String)
-  key(:image_path, String)
+  key(:image_url, String)
 end

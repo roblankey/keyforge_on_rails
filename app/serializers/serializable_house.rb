@@ -14,5 +14,5 @@ class SerializableHouse < JSONAPI::Serializable::Resource
   #   @object.name.upcase
   # end
   attribute :name
-  attribute :image_path
+  attribute :image_url
 end

@@ -38,6 +38,6 @@ StrongResources.configure do
   end
   strong_resource :house do
     attribute :name, :string
-    attribute :image_path, :string
+    attribute :image_url, :string
   end
 end

@@ -14,7 +14,7 @@ RSpec.describe 'houses#create', type: :request do
           type: 'houses',
           attributes: {
             name: attrs[:name],
-            image_path: attrs[:image_path]
+            image_url: attrs[:image_url]
           }
         }
       }
