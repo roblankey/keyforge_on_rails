@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
   scope path: '/api' do
     resources :docs, only: [:index], path: '/swagger'
 
