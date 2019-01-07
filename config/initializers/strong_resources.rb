@@ -43,4 +43,17 @@ StrongResources.configure do
     attribute :name, :string
     attribute :image_url, :string
   end
+  strong_resource :card do
+    attribute :name, :string
+    attribute :body, :string
+    attribute :card_type, :string
+    attribute :subtype_1, :string
+    attribute :subtype_2, :string
+    attribute :maverick, :boolean
+    attribute :flavor_text, :string
+    attribute :image_url, :string
+    attribute :bonus_aember, :integer
+    belongs_to :house, resource: :house
+    belongs_to :archon, resource: :archon
+  end
 end

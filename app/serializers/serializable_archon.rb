@@ -16,7 +16,7 @@ class SerializableArchon < JSONAPI::Serializable::Resource
   attribute :name
   attribute :set
   attribute :image_url
-  
+
   belongs_to :house_one
   belongs_to :house_two
   belongs_to :house_three
