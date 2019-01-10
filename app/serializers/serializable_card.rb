@@ -11,5 +11,4 @@ class SerializableCard < JSONAPI::Serializable::Resource
   attribute :image_url
   attribute :bonus_aember
   belongs_to :house
-  belongs_to :archon
 end

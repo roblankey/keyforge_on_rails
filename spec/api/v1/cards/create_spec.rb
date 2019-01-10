@@ -6,9 +6,8 @@ RSpec.describe 'cards#create', type: :request do
   end
 
   describe 'basic create' do
-    let(:archon) { FactoryBot.create(:archon) }
     let(:house) { FactoryBot.create(:house) }
-    let(:card) { FactoryBot.build(:card, archon: archon, house: house) }
+    let(:card) { FactoryBot.build(:card, house: house) }
 
     let(:payload) do
       {
@@ -20,12 +19,6 @@ RSpec.describe 'cards#create', type: :request do
             image_url: card.image_url
           },
           relationships: {
-            archon: {
-              data: {
-                type: 'archons',
-                id: archon.id
-              }
-            },
             house: {
               data: {
                 type: 'houses',

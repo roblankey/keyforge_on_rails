@@ -8,7 +8,6 @@ FactoryBot.define do
     subtype_1 { 'Robot' }
     subtype_2 { 'Human' }
     maverick { false }
-    association :archon, factory: :archon
     flavor_text { 'Flavor Text' }
     bonus_aember { 1 }
   end

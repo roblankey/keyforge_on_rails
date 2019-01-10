@@ -39,12 +39,10 @@ ActiveRecord::Schema.define(version: 2019_01_06_205700) do
     t.string "subtype_2"
     t.boolean "maverick", default: false
     t.uuid "house_id"
-    t.uuid "archon_id"
     t.text "flavor_text"
     t.integer "bonus_aember", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["archon_id"], name: "index_cards_on_archon_id"
     t.index ["house_id"], name: "index_cards_on_house_id"
   end
 

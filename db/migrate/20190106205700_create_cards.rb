@@ -9,7 +9,6 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :subtype_2
       t.boolean :maverick, default: false
       t.references :house, type: :uuid
-      t.references :archon, type: :uuid
       t.text :flavor_text
       t.integer :bonus_aember, default: 0
 
