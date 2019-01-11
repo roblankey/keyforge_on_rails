@@ -23,7 +23,7 @@ Standard Rails server applies as well here. So running is as easy as
 rails s
 ```
 
-####JSON-API
+#### JSON-API
 
 The application provides interfaces to the card information via ActiveRecord through [JSONAPI Suite](https://github.com/jsonapi-suite) 
 and the [JSONAPI](https://jsonapi.org/) specification
