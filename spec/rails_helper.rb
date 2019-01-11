@@ -8,6 +8,8 @@ require 'rspec/rails'
 require 'jsonapi_spec_helpers'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'database_cleaner'
+require 'simplecov'
+SimpleCov.start
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

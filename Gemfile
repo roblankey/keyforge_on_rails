@@ -29,6 +29,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.5'
   gem 'swagger-diff', '~> 1.1'
+  gem 'brakeman', '~> 4.3.1'
 end
 
 group :development do
@@ -38,6 +39,7 @@ group :test do
   gem 'database_cleaner', '~> 1.6'
   gem 'faker', '~> 1.7'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
