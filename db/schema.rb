@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_27_052446) do
+ActiveRecord::Schema.define(version: 2019_01_06_205700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -28,6 +28,22 @@ ActiveRecord::Schema.define(version: 2018_12_27_052446) do
     t.index ["house_one_id"], name: "index_archons_on_house_one_id"
     t.index ["house_three_id"], name: "index_archons_on_house_three_id"
     t.index ["house_two_id"], name: "index_archons_on_house_two_id"
+  end
+
+  create_table "cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.string "image_url"
+    t.string "card_type"
+    t.string "subtype_1"
+    t.string "subtype_2"
+    t.boolean "maverick", default: false
+    t.uuid "house_id"
+    t.text "flavor_text"
+    t.integer "bonus_aember", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["house_id"], name: "index_cards_on_house_id"
   end
 
   create_table "houses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

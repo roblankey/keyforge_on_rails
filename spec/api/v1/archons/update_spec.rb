@@ -7,6 +7,7 @@ RSpec.describe "archons#update", type: :request do
 
   describe 'basic update' do
     let!(:archon) { create(:archon) }
+    let!(:new_archon) { build(:archon) }
 
     let(:payload) do
       {
@@ -14,20 +15,18 @@ RSpec.describe "archons#update", type: :request do
           id: archon.id.to_s,
           type: 'archons',
           attributes: {
-            # ... your attrs here
+            name: new_archon.name
           }
         }
       }
     end
 
-    # Replace 'xit' with 'it' after adding attributes
-    xit 'updates the resource' do
+    it 'updates the resource' do
       expect {
         make_request
       }.to change { archon.reload.attributes }
       assert_payload(:archon, archon, json_item)
-
-      # ... assert updates attributes ...
+      expect(archon.name).to eq(new_archon.name)
     end
   end
 end

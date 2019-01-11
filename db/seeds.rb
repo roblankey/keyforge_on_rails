@@ -9,3 +9,14 @@ Archon.create(name: 'V. Zent, the Harbor Inventor',
               house_one_id: House.find_by_name('Logos').id,
               house_two_id: House.find_by_name('Shadows').id,
               house_three_id: House.find_by_name('Untamed').id)
+
+Card.create(name: 'Staunch Knight',
+            body: 'Staunch Knight gains +2 power while it is on a flank.',
+            image_url: '',
+            card_type: 'Creature',
+            house_id: House.find_by_name('Sanctum').id,
+            subtype_1: 'Human',
+            subtype_2: 'Knight',
+            maverick: true,
+            flavor_text: '',
+            bonus_aember: 0)
