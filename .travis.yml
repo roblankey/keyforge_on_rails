@@ -9,7 +9,8 @@ env:
   - KEYFORGE_ON_RAILS_DATABASE_HOST="" KEYFORGE_ON_RAILS_DATABASE_USERNAME="postgres" KEYFORGE_ON_RAILS_DATABASE_PASSWORD=""
 
 before_script:
-  - bin/rake db:migrate RAILS_ENV=test
+  - psql -c 'create database keyforge_on_rails_test;' -U postgres
 
 script:
+  - bin/rake db:migrate RAILS_ENV=test
   - bin/rake
